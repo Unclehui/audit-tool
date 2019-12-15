@@ -151,14 +151,15 @@ Sub 一对多()
                 '规划求解
                 SolverReset
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM, ByChange:=RANSTR _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverAdd CellRef:=RANSTR, Relation:=1, FormulaText:="1"
                 SolverAdd CellRef:=RANSTR, Relation:=3, FormulaText:="0"
                 SolverAdd CellRef:=RANSTR, Relation:=4, FormulaText:="整数"
+                SolverOptions MaxSubproblems:=1073741824
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM, ByChange:=RANSTR _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM, ByChange:=RANSTR _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverSolve UserFinish:=True
             End If
 
@@ -251,14 +252,15 @@ Sub 一对多()
                 CALNUM2 = Worksheets("TEMP").Range("B1").Value
                 SolverReset
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM2, ByChange:=RANSTR2 _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverAdd CellRef:=RANSTR2, Relation:=1, FormulaText:="1"
                 SolverAdd CellRef:=RANSTR2, Relation:=3, FormulaText:="0"
                 SolverAdd CellRef:=RANSTR2, Relation:=4, FormulaText:="整数"
+                SolverOptions MaxSubproblems:=1073741824
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM2, ByChange:=RANSTR2 _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverOk SetCell:="$F$1", MaxMinVal:=3, ValueOf:=CALNUM2, ByChange:=RANSTR2 _
-                    , Engine:=1, EngineDesc:="GRG Nonlinear"
+                    , Engine:=1, EngineDesc:="Simplex LP"
                 SolverSolve UserFinish:=True
             End If
 
